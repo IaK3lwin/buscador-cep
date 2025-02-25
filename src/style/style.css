@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+.Container {
+    height: 100vh;
+
+    background: linear-gradient(rgb(29, 29, 29), rgb(8, 10, 17));
+
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    & .Title {
+        color: white;
+        font-size: 5em;
+        animation: flipTitle 2s;
+    }
+
+}
+
+.ContainerInput
+{
+    background-color: rgba(255, 255, 255, 0.233);
+    
+    padding: 1%;
+    margin: 1%;
+    border-radius: 8px;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.377);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: initInput 1s;
+
+    & input {
+        height: 100%;
+        background-color: transparent;
+        color: white;
+        outline: none;
+        border: none;
+        font-size: 1.3em;
+        font-weight: normal;
+        margin-right: 8px;
+
+        transition: all .5s;
+    }
+    & input::placeholder
+    {
+        color: rgba(245, 222, 179, 0.678);
+    }
+}
+
+.ButtonSearch
+{
+    
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    transition: transform .5s;
+
+    
+}
+
+.ButtonSearch:hover
+{
+    transform: scale(1.3);
+}
+
+
+
+.Main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+    border-radius: 8px;
+    padding: 3%;
+
+    width: 600px;
+
+    & span {
+        margin: 2%;
+        font-weight: bold;
+    }
+}
+
+
+@media (max-width:600px) {
+    .Title {
+        font-size: 3em;
+    }
+
+    .Main {
+        width: 75%;
+        font-size: 1em;
+    }
+}
+
+@keyframes flipTitle {
+    from {
+        transform: rotateX(90deg);
+    }
+    to {
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes initInput {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
